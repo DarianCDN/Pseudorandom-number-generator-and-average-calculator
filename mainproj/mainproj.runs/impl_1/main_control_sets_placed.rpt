@@ -1,0 +1,80 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu May 29 19:45:13 2025
+| Host         : DESKTOP-O3RDJ2U running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    12 |
+| Unused register locations in slices containing registers |    37 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            3 |
+|      4 |            1 |
+|      8 |            1 |
+|     12 |            2 |
+|    16+ |            5 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              77 |           20 |
+| No           | No                    | Yes                    |               2 |            1 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              12 |            3 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             136 |           41 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------------+-----------------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+|                Clock Signal                |                       Enable Signal                       |                      Set/Reset Signal                      | Slice Load Count | Bel Load Count |
++--------------------------------------------+-----------------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+|  EXECUTION_UNIT/DATAGEN/CLKDIV/n_reg[25]_0 |                                                           |                                                            |                1 |              2 |
+|  EXECUTION_UNIT/SSDDEC/c1/N_reg[15]_0      |                                                           |                                                            |                1 |              2 |
+|  CLK_IBUF_BUFG                             |                                                           | RST_IBUF                                                   |                1 |              2 |
+|  DATACLK                                   | LEN_IBUF[2]                                               |                                                            |                1 |              4 |
+|  CLK_IBUF_BUFG                             | COMMAND_UNIT/E[0]                                         |                                                            |                2 |              8 |
+|  CLK_IBUF_BUFG                             | COMMAND_UNIT/FSM_sequential_state_reg[0]_0[0]             | RST_IBUF                                                   |                5 |             12 |
+|  DATACLK                                   | LEN_IBUF[2]                                               | EXECUTION_UNIT/DATABUFFR/registers16[1].r2.reg2to15/SR[0]  |                4 |             12 |
+|  DATACLK                                   | EXECUTION_UNIT/DATABUFFR/registers16[2].r2.reg2to15/E[0]  | EXECUTION_UNIT/DATABUFFR/registers16[3].r2.reg2to15/SR[0]  |                5 |             16 |
+|  DATACLK                                   | EXECUTION_UNIT/DATABUFFR/registers16[5].r2.reg2to15/E[0]  | EXECUTION_UNIT/DATABUFFR/registers16[7].r2.reg2to15/SR[0]  |               11 |             32 |
+|  DATACLK                                   |                                                           |                                                            |                6 |             36 |
+|  CLK_IBUF_BUFG                             |                                                           |                                                            |               12 |             45 |
+|  DATACLK                                   | EXECUTION_UNIT/DATABUFFR/registers16[13].r2.reg2to15/E[0] | EXECUTION_UNIT/DATABUFFR/registers16[15].r2.reg2to15/SR[0] |               16 |             64 |
++--------------------------------------------+-----------------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+
+
